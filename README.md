@@ -23,13 +23,13 @@ Networks: A Unified Review**. *Shuiwang Ji（ 23年的fellow，一年5篇 TPAMI 
 
 2. **Convolutional Neural Networks on Graphs with Fast Localized Spectral Filtering**. *Michaël Defferrard, Xavier Bresson, Pierre Vandergheynst.* ***NIPS 2016*** [[pdf](http://papers.nips.cc/paper/6081-convolutional-neural-networks-on-graphs-with-fast-localized-spectral-filtering.pdf)] 
 
-    &nbsp;&nbsp;第二代谱图神经网络，使用切比雪夫展开，也就是所谓的 chebnet，第三代本质就是把 chebnet 做进一步的简化
+    &nbsp;&nbsp;第二代谱图神经网络，使用切比雪夫展开，也就是所谓的 ChebyNet，第三代本质就是把 chebynet 做进一步的简化
 
 3. **Inductive Representation Learning on Large Graphs**. *Jure Leskovec （ 斯坦福神仙，GIN、node2vec 创始人，DGL库开发者，OGB 数据集开源者，年轻又斯文 ），William L Hamilton, Junlin Yang.* ***NIPS 2017*** [[pdf](https://proceedings.neurips.cc/paper_files/paper/2017/file/5dd9db5e033da9c6fb5ba83c7a7ebea9-Paper.pdf)] [[original code](https://github.com/williamleif/GraphSAGE)] [[pyg code](https://pytorch-geometric.readthedocs.io/en/latest/generated/torch_geometric.nn.models.GraphSAGE.html)]
 
     &nbsp;&nbsp;本文是 GraphSAGE 的原作，空间域图。我认为是 GCN 和 GAT 承上启下的工作（尽管他们几乎是同一时期），使GCN扩展成归纳学习任务，对未知节点起到泛化作用，也就是所谓的 inductive；训练 graphSAGE 的时候甚至可以不用全图信息，解决了 GAT 和 GCN 的痛点；本文也首次提出 GCN 是一种特殊的空间域图。本文还考虑了多种不同的聚合方式，会让你有一个新的看图的视野。<u>一般认为本文比较适合图在工业界的落地应用。</u>
 
-4. **Graph Attention Networks**. *Yoshua Bengio（这位不用多说了吧）*. ***ICLR 2018*** [[pdf](https://browse.arxiv.org/pdf/1710.10903.pdf)] [[original code]( https://github.com/PetarV-/GAT.)] [[pyg code](https://pytorch-geometric.readthedocs.io/en/latest/generated/torch_geometric.nn.models.GAT.html)] 
+4. **Graph Attention Networks**. *Yoshua Bengio（这位不用多说了吧）*. ***ICLR 2018*** [[pdf](https://browse.arxiv.org/pdf/1710.10903.pdf)] [[original code]( https://github.com/PetarV-/GAT)] [[pyg code](https://pytorch-geometric.readthedocs.io/en/latest/generated/torch_geometric.nn.models.GAT.html)] 
 
     &nbsp;&nbsp;GCN 不同节点的边视为一样的，GAT 参考 Transformer 的思想，基于点之间的注意力分配边的权重。 GAT 尤其适合有向图，因为不同方向得到的注意力是不一样的。注意，这里的边的权重只考虑了 src 节点与 dst 节点的关系，忽视了 src 节点与 dst 的邻居节点之间的关系，后续有 GraphFormer、GOAT 等来完善。
 
@@ -137,7 +137,7 @@ DAIC-WOZ（问卷、音频、视频、），MODMA（音频+EEG）
 
 (3）   dMRI，可以看到神经结构，原理是各组织水分子扩散性质不同
 
-(4） 在肿瘤分割领域还有其他许多模态
+(4） 借鉴肿瘤分割领域还有其他许多模态
 
     a.  fluid attenuation inversion recovery (FLAIR)
 
